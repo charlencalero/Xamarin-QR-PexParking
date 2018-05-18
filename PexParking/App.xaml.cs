@@ -8,7 +8,7 @@ namespace PexParking
         {
             InitializeComponent();
 
-            MainPage = new PexParkingPage();
+            MainPage = new NavigationPage(new PexParkingPage());
         }
 
         protected override void OnStart()

@@ -1,5 +1,107 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PexParking.Page.ClienteCodigo">
+
     <ContentPage.Content>
+
+     <ScrollView>
+            
+      
+        <StackLayout  Orientation="Vertical" Padding="10,10,10,10" Spacing="6">
+             
+              
+                <Image Source="pex2.jpg" HeightRequest="100" />
+               
+            
+             
+             
+             <Label Text="ANB082"
+                   HorizontalOptions="Center"
+                   FontSize="Medium"
+                    x:Name="labeplaca"
+                   VerticalOptions="Center"></Label> 
+
+                    <Label Text="PISO 03"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                    x:Name="labepiso"
+                   VerticalOptions="Center"></Label>
+            
+
+                <Label Text="105"
+                   HorizontalOptions="Center"
+                   FontSize="60"
+                    x:Name="labeubicacion"
+                   VerticalOptions="Center"></Label>
+
+                <Label Text="PASILLO 03"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                      
+                    x:Name="labepasillo"
+                   VerticalOptions="Center"></Label>
+
+
+                    <Image x:Name="botonplano" WidthRequest="72" Source="point.png" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer 
+                Tapped="verimagen_Clicked" 
+                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+                
+                <ScrollView Orientation="Horizontal">
+                <StackLayout>
+
+                          <Image 
+                      IsVisible="false"
+                    x:Name="plano" WidthRequest="400" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer 
+                Tapped="Handle_Tapped" 
+                NumberOfTapsRequired="2" />
+                </Image.GestureRecognizers>
+            </Image>
+                    </StackLayout>
+                   
+                </ScrollView>
+                    
+
+                
+                <Label Text=""></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Hora Lectura"></Label>
+                    <Label x:Name="labehoraactu" Text="08:08:09 am"></Label>
+                </StackLayout>
+                 <Label HorizontalOptions="Center" Text="Alerta cada 45 min"></Label>
+              <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                    <Label Text="Proxima Alerta"></Label>
+                    <Label x:Name="labehoraalarm" Font="Bold" Text="09:08:09 am"></Label>
+                </StackLayout>
+
+
+  <Label Text=""></Label>
+
+                     <Image x:Name="back" Source="back.png" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer 
+                Tapped="Nuevo_Clicked" 
+                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+              
+           <Label HorizontalOptions="Center" Text="Nuevo codigo"></Label>
+
+                
+                <ActivityIndicator x:Name="Wait"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"></ActivityIndicator>
+
+                 <Label HorizontalOptions="Center" Text=""></Label>
+                 <Label HorizontalOptions="Center" TextColor="Gray" Text="Powered by Charlen Calero "></Label>
+
+                </StackLayout>
+            
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>
