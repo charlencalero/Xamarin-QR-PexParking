@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             BackgroundColor="White"
              x:Class="PexParking.Page.CapturaQR">
         <ContentPage.Content>
           
 
           <ScrollView>
             
-        <StackLayout >
+        <StackLayout HorizontalOptions="Center" >
               
-           <Image Source="pex2.jpg" HeightRequest="100" />     
-            <Label></Label>
+           <Image Source="logopex.png" HeightRequest="100" Margin="30,30,30,30" />     
+        
                 
-        <Label Text="Capturar su ubicacion"
+        <Label Style="{StaticResource Font-pex1}" Text="Capturar su ubicacion"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"  Font="Bold" FontSize="Large"></Label>
-        <Label   HorizontalOptions="Center"
+        <Label Style="{StaticResource Font-pex1}"  HorizontalOptions="Center"
                    VerticalOptions="Center"  Text="Clic en el lector"></Label>
            <Label Text=""></Label>
             <Image x:Name="qrimage" Source="qrcode2.png" HorizontalOptions="Center" VerticalOptions="Center">
@@ -26,18 +27,22 @@
                 </Image.GestureRecognizers>
             </Image>
          <Label></Label>
-       <Label x:Name="Labe_msj" Text="ninguno" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Navy" Font="Bold" FontSize="Medium"></Label>
-            <Label Text=""></Label>
-              
-                    <Image x:Name="save" Source="save.png" HorizontalOptions="Center" VerticalOptions="Center">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer 
-                Tapped="Guardar_Clicked" 
-                NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
-            </Image>
-            <Label HorizontalOptions="Center" Text="Guardar codigo"></Label>
-                
+       <Label Margin="0,0,0,20" x:Name="Labe_msj" Style="{StaticResource Font-pex1}" Text="" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Navy" FontAttributes="Bold" FontSize="Medium"></Label>
+           
+             
+                   
+            <Button x:Name="Butt_Ingr"
+                             Clicked="Guardar_Clicked"      
+                Text="Guardar" 
+                    FontSize="Medium"
+                   FontAttributes ="Bold"
+                    
+                    Style="{StaticResource Boton}"
+
+                         WidthRequest="180"
+                        TextColor="White" BackgroundColor="#F6921E"
+                    ></Button>    
+
         </StackLayout>
     </ScrollView>
         

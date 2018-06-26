@@ -11,35 +11,84 @@
        
             <Style x:Key="Boton" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
-           
                 <Setter Property="WidthRequest" Value="180" />
-                <Setter Property="HeightRequest" Value="60" />
-                <Setter Property="BorderRadius" Value="30" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="BorderRadius" Value="20" />
                 <Setter Property="BackgroundColor" Value="{StaticResource BotonFondo}" />
                 <Setter Property="TextColor" Value="{StaticResource BotonColor}" />
                 <Setter Property="Margin" Value="{StaticResource BotonMargin}" />
-             
-            </Style>
 
+                    <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Exo</OnPlatform.iOS>
+                        <OnPlatform.Android>Fonts/Exo-Bold.otf#Exo</OnPlatform.Android>
+                    </OnPlatform>
+                </Setter>
+                
+             </Style>
 
-                 
         <Color x:Key="EntryColor">Black</Color>
-        <Color x:Key="EntryFondo">White</Color>
-       
-  
+
+            <Color x:Key="EntryFondo">White</Color>
        
             <Style x:Key="Texto" TargetType="Editor">
                 <Setter Property="HorizontalOptions" Value="Center" />
            <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="WidthRequest" Value="150" />
        
                   <Setter Property="HeightRequest" Value="40" />
                 <Setter Property="BackgroundColor" Value="{StaticResource EntryFondo}" />
                 <Setter Property="TextColor" Value="{StaticResource EntryColor}" />
-            
+
+                     <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Exo</OnPlatform.iOS>
+                        <OnPlatform.Android>Fonts/Exo-Regular.otf#Exo</OnPlatform.Android>
+                    </OnPlatform>
+                </Setter>
              
             </Style> 
-      
+
+
+             <Style x:Key="Font-pex1" TargetType="Label">
+                 <Setter Property ="FontSize" Value="14"/>
+                <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Exo</OnPlatform.iOS>
+                        <OnPlatform.Android>Fonts/Exo-Regular.otf#Exo</OnPlatform.Android>
+                    </OnPlatform>
+                </Setter>
+            </Style>
+
+            <Style x:Key="Font-pex2" TargetType="Label">
+                 <Setter Property ="FontSize" Value="14"/>
+                <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Exo</OnPlatform.iOS>
+                        <OnPlatform.Android>Fonts/Exo-Bold.otf#Exo</OnPlatform.Android>
+                    </OnPlatform>
+                </Setter>
+            </Style>
+
+            <Style x:Key="Font-digi1" TargetType="Label">
+                 <Setter Property ="FontSize" Value="14"/>
+                <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>DS-Digital</OnPlatform.iOS>
+                        <OnPlatform.Android>Fonts/DS-DIGI.ttf#DS-Digital</OnPlatform.Android>
+                    </OnPlatform>
+                </Setter>
+            </Style>
+
+            <Style x:Key="Font-digi2" TargetType="Label">
+                 <Setter Property ="FontSize" Value="14"/>
+                <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>DS-Digital</OnPlatform.iOS>
+                        <OnPlatform.Android>Fonts/DS-DIGIB.ttf#DS-Digital</OnPlatform.Android>
+                    </OnPlatform>
+                </Setter>
+            </Style>
 
     </ResourceDictionary>
     </Application.Resources>

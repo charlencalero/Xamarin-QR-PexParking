@@ -1,58 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:PexParking" x:Class="PexParking.PexParkingPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:PexParking" 
+             BackgroundColor="White"
+             x:Class="PexParking.PexParkingPage">
 
   <ContentPage.Content>
 
      <ScrollView>
             
       
-        <StackLayout  Orientation="Vertical" Padding="10,10,10,10" Spacing="6">
+        <StackLayout  Orientation="Vertical" HorizontalOptions="Center" Padding="10,10,10,10" Spacing="6"  >
                
-                <Image Source="pex2.jpg" HeightRequest="100" />
-                <Label></Label>
+                <Image Source="logopex.png" HeightRequest="100" Margin="30,30,30,30" />
+              
                
-                <Label Text="Bienvenido"
+                <Label Style="{StaticResource Font-pex1}" Text="Bienvenido"
                    HorizontalOptions="Center"
                    FontSize="Medium"
                     
-                   VerticalOptions="Center"></Label>
-                <Label Text=""></Label>
+                   VerticalOptions="Center" Margin="0,0,0,20"></Label>
+              
             
                 
-                <StackLayout Orientation="Vertical">
-
-            <Entry x:Name="Text_Placa"
+            
+            <Entry  x:Name="Text_Placa"
                       Style="{StaticResource Texto}"
                    
                    Placeholder="Ingrese Placa"
-               
+               WidthRequest="220"
                     Text=""></Entry>
-                </StackLayout>
-                <StackLayout Orientation="Vertical">
+           
                       
                 <Entry x:Name="Text_Celular"
                         Style="{StaticResource Texto}"
                    Placeholder="Ingrese Celular"
-                   FontSize="Medium" ></Entry>
+                   FontSize="Medium" 
+                    WidthRequest="220"
+                       Keyboard="Numeric" Margin="0,0,0,20"></Entry>
 
-                <Label Text=""></Label>
+           
                     
-            </StackLayout>
+         
 
 
                 <Button x:Name="Butt_Ingr"
                              Clicked="Ingre_Clicked"      
                 Text="Ingresar" 
                     FontSize="Medium"
-                    Font="Bold"
+                   FontAttributes ="Bold"
                     Style="{StaticResource Boton}"
+
+                         WidthRequest="180"
+                        TextColor="White" BackgroundColor="#F6921E"
                     ></Button>
                 <ActivityIndicator x:Name="Wait"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"></ActivityIndicator>
 
-                 <Label HorizontalOptions="Center" Text=""></Label>
-                 <Label HorizontalOptions="Center" TextColor="Gray" Text="Powered by Charlen Calero "></Label>
+             
+                 <Image Source="logovinci.jpg" HeightRequest="50" Margin="30,30,30,30"></Image>
             </StackLayout>
             
         </ScrollView>

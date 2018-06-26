@@ -54,12 +54,14 @@ namespace PexParking.Page
                 piso = piso.Replace("-", " ");
                 var Parkeo = new Entity.parkeo(piso, ubicacion, placa, celular, horalectura, horaalerta,Labe_msj.Text,"","");
                 // ABRIR LA OTRA VENTANA
+                Labe_msj.Text = "";
                 await Navigation.PushAsync(new ClienteCodigo(Parkeo));
 
             }
             catch (Exception ex)
             {
-                await DisplayAlert("sistema", "El codigo Leido no pertenece a PEX", "continuar");
+                await DisplayAlert("sistema", "El codigo leido no pertenece a PEX", "continuar");
+                Labe_msj.Text = "";
                 return;
             }
            
@@ -92,79 +94,7 @@ namespace PexParking.Page
 
         }
 
-        private async void ApiAsistencia(string dni, string tipo)
-        {
-            if (string.IsNullOrEmpty(dni))
-            {
-                await DisplayAlert("Error", "Ingresar un DNI", "Aceptar");
-                return;
-            }
-
-
-            string result="";
-            string url="";
-
-            try
-            {
-
-                string fecha;
-                string hora;
-
-                fecha = DateTime.Now.ToString("yyyy-MM-dd");
-                hora = DateTime.Now.ToString("hh:mm:ss");
-
-                //HttpClient client = new HttpClient();
-                //client.BaseAddress = new Uri(Constantes.RestUrl);
-                //url = string.Format(Constantes.CarpUrl + "/asistencia/CRUD_Ctrl_asistencia.php?tipo=4&origen=2&textdni={0}&turn_codi={1}&fecha={2}&hora={3}&usua_codigo=1", dni, tipo, fecha, hora);
-
-                //var response = await client.GetAsync(url);
-                //result = response.Content.ReadAsStringAsync().Result;
-
-            }
-
-           
-
-            catch (Exception ex)
-            {
-                await DisplayAlert("System", "Se perdio la conexion, " + ex.Message, "Aceptar");
-                return;
-            }
-
-            Labe_msj.Text = msj;
-
-
-            //if (string.IsNullOrEmpty(result) || result == "null")
-            //{
-            //    await DisplayAlert("System", "Error al registrar asistencia", "Aceptar");
-
-            //    return;
-            //}
-
-            //mensaje msj;
-
-            //try
-            //{
-
-            //    msj = JsonConvert.DeserializeObject<mensaje>(result);
-
-            //    if (msj.tipo == "1")
-            //    {
-            //        Labe_msj.TextColor = Color.Red;
-            //        Labe_msj.Text = msj.Mensaje;
-            //    }
-            //    else
-            //    {
-            //        Labe_msj.TextColor = Color.Blue;
-            //        Labe_msj.Text = msj.Mensaje;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    await DisplayAlert("System", ex.Message + " - " + url, "ok");
-            //    msj = null;
-            //}
-        }
+       
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {

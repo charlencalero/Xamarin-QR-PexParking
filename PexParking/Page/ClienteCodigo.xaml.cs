@@ -11,7 +11,7 @@ namespace PexParking.Page
 
         async void Nuevo_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new CapturaQR(parkeo_cliente.placa, parkeo_cliente.celular));
+            await Navigation.PopAsync();
         }
 
 
